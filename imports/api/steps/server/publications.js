@@ -6,3 +6,5 @@ import { Steps } from '../steps.js';
 Meteor.publish('steps.all', function () {
   return Steps.find();
 });
+
+
