@@ -3,15 +3,37 @@
   <ul>
     <li>
       <form class="addStep-step-add">
-        <input type="text" name="title" placeholder="Title" required>
-        <input type="url" name="url" placeholder="Url" required>
-        <input type="submit" name="submit" value="Add new link">
+        <input type="text" name="step" placeholder="Step" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="text" name="graph" placeholder="Graph" required>
+        <input type="submit" name="submit" value="Add new step">
       </form>
     </li>
-    {{#each steps}}
-      <li><a href="{{url}}" target="_blank">{{title}}</a></li>
-    {{/each}}
+<!--     {{#each steps}}
+      <li><a href="{{description}}" target="_blank">{{step}}</a></li>
+    {{/each}} -->
   </ul>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Step</th>
+        <th>Description</th>
+        <th>Graph</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each steps}}
+        <tr>
+          <td><h1>{{step}}</h1></td>
+          <td><h3>{{description}}</h3></td>
+          <td>{{graph}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+
 </template>
 
 

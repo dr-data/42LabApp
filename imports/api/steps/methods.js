@@ -5,13 +5,15 @@ import { check } from 'meteor/check';
 import { Steps } from './steps.js';
 
 Meteor.methods({
-  'steps.insert'(title, url) {
-    check(url, String);
-    check(title, String);
+  'steps.insert'(step, description, graph) {
+    check(description, String);
+    check(step, String);
+    check(graph, String);
 
     return Steps.insert({
-      url,
-      title,
+      description,
+      step,
+      graph,
       createdAt: new Date(),
     });
   },

@@ -13,15 +13,17 @@ Template.addStep.events({
     event.preventDefault();
 
     const target = event.target;
-    const title = target.title;
-    const url = target.url;
+    const step = target.step;
+    const description = target.description;
+    const graph = target.graph;
 
-    Meteor.call('steps.insert', title.value, url.value, (error) => {
+    Meteor.call('steps.insert', step.value, description.value, graph.value, (error) => {
       if (error) {
         alert(error.error);
       } else {
-        title.value = '';
-        url.value = '';
+        step.value = '';
+        description.value = '';
+        graph.value = '';
       }
     });
   },
